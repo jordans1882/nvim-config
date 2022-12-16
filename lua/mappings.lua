@@ -133,6 +133,10 @@ mymap('n', '<localleader>ep', ':Trouble workspace_diagnostics<CR>')
 mymap("n", "<localleader>ef", ":CodeActionMenu<CR>")
 
 
+
+mymap('n', '<localleader>ej', ':lnext<CR>')
+mymap('n', '<localleader>ek', ':lprevious<CR>')
+
 -- mymap(
 --     "n",
 --     "<localleader>ee",
@@ -172,7 +176,7 @@ mymap(
 mymap(
     "n",
     "<localleader>gs",
-    'lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>'
+    ':lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>'
 )
 -- mymap('n', '<localleader>gs', 'lua require"gitsigns".stage_hunk()<CR>')
 
