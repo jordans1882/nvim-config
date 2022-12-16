@@ -200,8 +200,12 @@ return packer.startup(function(use)
     -- -- Git
     -- use("tpope/vim-fugitive")
 
+
+    use {'ojroques/nvim-buildme'}
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use("lewis6991/gitsigns.nvim")
+
+    use 'lewis6991/satellite.nvim'
     use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
     -- -- Journal/Orgmode
