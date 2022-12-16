@@ -164,6 +164,9 @@ return packer.startup(function(use)
     -- Snippets
     use("SirVer/ultisnips")
 
+    use("mtikekar/nvim-send-to-term")
+    -- use("jpalardy/vim-slime") // favor nvim-send-to-term for now...
+
     -- -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
