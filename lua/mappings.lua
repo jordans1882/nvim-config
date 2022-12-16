@@ -53,11 +53,12 @@ local function mymap(m, k, v)
 end
 
 --  General bindings
-mymap("n", "<C-+>", function()
-    ResizeGuiFont(1)
+mymap("n", "<C-=>", function()
+  ResizeGuiFont(1)
 end)
+
 mymap("n", "<C-->", function()
-    ResizeGuiFont(-1)
+  ResizeGuiFont(-1)
 end)
 
 mymap("n", "gd", ':lua require("goto-preview").goto_preview_definition()<CR>')
