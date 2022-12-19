@@ -31,7 +31,7 @@ mason.setup({
 })
 
 mason_lspconfig.setup({
-    ensure_installed = { "clangd", "sumneko_lua" },
+    ensure_installed = { "clangd", "sumneko_lua", "zls" },
     automatic_installation = true,
 })
 
@@ -66,6 +66,7 @@ local setup_lsps = function()
         "tsserver",
         "vimls",
         "yamlls",
+        "zls",
     }) do
         lspconfig[server].setup(opts)
     end

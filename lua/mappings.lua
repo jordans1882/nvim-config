@@ -11,13 +11,12 @@ VIM_KEYMAP_SET({ "n" }, "k", "gk", NOREMAP)
 VIM_KEYMAP_SET({ "i" }, "jk", "<Esc>", NOREMAP)
 
 -- Change current working directory to that of the current buffer
-local augroup_all_files =
-    vim.api.nvim_create_augroup("augroup_all_files", { clear = true })
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    group = augroup_all_files,
-    pattern = "*",
-    command = "lcd %:p:h",
-})
+-- local augroup_all_files = vim.api.nvim_create_augroup("augroup_all_files", { clear = true })
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, {
+--     group = augroup_all_files,
+--     pattern = "*",
+--     command = "lcd %:p:h",
+-- })
 
 -- Return to last edit position when opening files
 vim.cmd([[
@@ -61,6 +60,11 @@ mymap("n", "<C-->", function()
   ResizeGuiFont(-1)
 end)
 
+
+mymap("v", "<C-return>", 's')
+mymap("n", "<C-return>", 'ssj')
+
+
 mymap("n", "gd", ':lua require("goto-preview").goto_preview_definition()<CR>')
 mymap("n", "gt", ':lua require("goto-preview").goto_type_definition()<CR>')
 mymap("n", "gt", ':lua require("goto-preview").goto_type_implementation()<CR>')
@@ -69,10 +73,11 @@ mymap("v", "<A-return>", ":SlimeSend<CR>")
 
 -- nmap <leader>s <Plug>SlimeParagraphSend
 
-local function slime_send_and_step()
-    SlimeSendCurrentLine()
-end
+-- local function slime_send_and_step()
+--     SlimeSendCurrentLine()
+-- end
 
+-- mymap("n", "<C-<CR>>", ":SlimeSendCurrentLine")
 -- vim.keymap.set({'n', 'i'}, "<C-+>", function() ResizeGuiFont(1)  end, opts)
 -- vim.keymap.set({'n', 'i'}, "<C-->", function() ResizeGuiFont(-1) end, opts)
 
@@ -129,7 +134,7 @@ mymap("n", "<localleader>cc", ":CommentToggle<CR>")
 
 -- Error bindings
 mymap('n', '<localleader>ee', ':TroubleToggle<CR>')
-mymap('n', '<localleader>ed', ':Trouble document_diagnostics<CR>')
+mymap('n', '<localleader>eb', ':Trouble document_diagnostics<CR>')
 mymap('n', '<localleader>ep', ':Trouble workspace_diagnostics<CR>')
 mymap("n", "<localleader>ef", ":CodeActionMenu<CR>")
 
@@ -247,8 +252,10 @@ mymap(
 mymap("n", "<localleader>ll", ":AerialToggle<CR>")
 
 -- Project bindings
-mymap("n", "<localleader>pf", ":Telescope find_files theme=ivy<CR>")
+mymap("n", "<C-k>", ":BuildMe<CR>")
+mymap("n", "<localleader>pf", ":Telescope fd theme=ivy<CR>")
 mymap("n", "<localleader>po", ":Telescope project theme=ivy<CR>")
+mymap("n", "<localleader>pr", ":Telescope live_grep theme=ivy<CR>")
 
 -- VIM_KEYMAP_SET({ "n" }, "<localleader>po", ":Telescope projects<CR>", NOREMAP_SILENT)
 -- VIM_KEYMAP_SET({ "n" }, "<localleader>po", ":Telescope projects theme=ivy<CR>", NOREMAP_SILENT)

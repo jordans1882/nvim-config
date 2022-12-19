@@ -31,7 +31,9 @@ vim.wo.signcolumn = "yes"
 vim.o.expandtab = true
 
 
+-- vim.g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
 
+vim.g.rooter_patterns = {".git", "Makefile", "*.sln", "build/env.sh"}
 
 
 -------------------------------------------------------------------------------

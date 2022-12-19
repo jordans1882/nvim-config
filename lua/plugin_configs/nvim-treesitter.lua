@@ -127,6 +127,7 @@ require("nvim-treesitter.configs").setup({
         "typescript",
         "vim",
         "yaml",
+        "zig",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -140,7 +141,8 @@ require("nvim-treesitter.configs").setup({
 
     highlight = {
         -- `false` will disable the whole extension
-        enable = false,
+        -- enable = false,
+        enable = true,
 
         -- these are the names of the parsers and not the filetype. (for example if you want to
         -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is

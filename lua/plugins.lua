@@ -66,6 +66,13 @@ return packer.startup(function(use)
         end,
     })
 
+    use("airblade/vim-rooter")
+
+    -- use {'edluffy/hologram.nvim'}
+    -- require('hologram').setup{
+    --     auto_display = true -- WIP automatic markdown image display, may be prone to breaking
+    -- }
+
     use({
         "brenoprata10/nvim-highlight-colors",
         requires = "nvim-lua/plenary.nvim",
@@ -166,6 +173,7 @@ return packer.startup(function(use)
 
     use("mtikekar/nvim-send-to-term")
     -- use("jpalardy/vim-slime") // favor nvim-send-to-term for now...
+
 
     -- -- Telescope
     use({
